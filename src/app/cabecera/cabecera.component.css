@@ -1,0 +1,15 @@
+nav, .dropdown-menu {
+    background-color: black; /*rgb(131, 163, 109);*/
+    /* R: 79 G: 174 B: 30*/
+}    
+
+nav a, .dropdown-menu {
+    color: white;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 35px;
+    height: auto;
+    border-radius: 50%;
+}
