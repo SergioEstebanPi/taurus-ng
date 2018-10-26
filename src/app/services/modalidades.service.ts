@@ -55,7 +55,7 @@ export class ModalidadesService {
 
   /* PUT update */
   modificarModalidad(modalidad){
-	let urlmodalidad = this.url + '/' + modalidad.id;
+	let urlmodalidad = this.url;
   	return this.http.put<any>(
   		urlmodalidad,
   		modalidad,

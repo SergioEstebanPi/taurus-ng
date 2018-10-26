@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ModalidadesService } from '../services/modalidades.service';
 import  { Globals } from '../globals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modalidades',
@@ -14,7 +15,8 @@ export class ModalidadesComponent implements OnInit {
   frase:string;
 
   constructor(private _modalidades:ModalidadesService,
-    private _globals:Globals) {
+    private _globals:Globals,
+    private _router:Router) {
     this.modalidades = [];
   }
 
@@ -42,6 +44,7 @@ export class ModalidadesComponent implements OnInit {
           } else {
             this.modalidades = respuesta;
           }
+          this._router.navigate(['/modalidades']);
   				//this.modalidades = respuesta;
   			},
   			error => {

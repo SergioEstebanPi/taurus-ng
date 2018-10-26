@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import {  ModalidadesService } from '../services/modalidades.service';
+import { Router } from '@angular/router';
+import { Globals } from '../globals';
+
 @Component({
   selector: 'app-crear-modalidad',
   templateUrl: './crear-modalidad.component.html',
@@ -7,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearModalidadComponent implements OnInit {
 
-  constructor() { }
+	modalidad:any;
+  error:boolean;
+
+  constructor(private _modalidades:ModalidadesService,
+  			private _router:Router,
+            private _globals:Globals) {
+  	this.modalidad = {
+  		nombre: "",
+  		descripcion: ""
+  	};
+  }
 
   ngOnInit() {
   }
+
+  crearModalidad(){
+		this._modalidades.crearModalidad(this.modalidad)
+			.subscribe(
+				respuesta => {
+          this.error = false;
+          alert('Modalidad creada correctamente');
+          this.modalidad = respuesta;
+          console.log(this.modalidad);
+					//this._router.navigate(["/traer-modalidad");
+					//console.log(respuesta);
+				},
+				error => {
+          this.error = true;
+					console.log(error);
+				}
+		);
+  }
+
 
 }

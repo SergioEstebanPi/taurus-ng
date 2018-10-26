@@ -17,6 +17,8 @@ import { EditarModalidadComponent } from './editar-modalidad/editar-modalidad.co
 import { RouterModule, Routes} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 const rutas:Routes=[
   {path:"", component:InicioComponent},
@@ -47,7 +49,9 @@ const rutas:Routes=[
     BrowserModule,
     RouterModule.forRoot(rutas),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    //NgbModule.forRoot()
   ],
   providers: [
   	Globals
