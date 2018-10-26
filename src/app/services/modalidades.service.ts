@@ -10,19 +10,18 @@ import { Globals } from '../globals';
 })
 export class ModalidadesService {
 
-
   url:string;
   encabezados:any;
   Modalidades:Array<any>;
 
   constructor(private http:HttpClient,
     private _globals:Globals) {
-    this.url = _globals.url + 'modalidades';
+    this.url = _globals.url + '/modalidad';
   	this.encabezados = {
   		headers: new HttpHeaders(
 		  	{
-		  		"Content-Type": "application/json",
-		  		"Authorization": "Bearer " + localStorage.getItem("SessionToken")
+		  		"Content-Type": "application/json"//,
+		  		//"Authorization": "Bearer " + localStorage.getItem("SessionToken")
 		  	}
 	  	)
   	};
