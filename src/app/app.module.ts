@@ -55,14 +55,47 @@ const rutas:Routes=[
   {path:"contacto", component:ContactoComponent},
   {path:"acercade", component:AcercadeComponent},
   {path:"iniciar-sesion", component:IniciarSesionComponent},
+
   {path:"modalidades", component:ModalidadesComponent},
   {path:"crear-modalidad", component:CrearModalidadComponent},
   {path:"editar-modalidad/:id", component:EditarModalidadComponent},
-  {path:"ver-modalidad/:id", component:VerModalidadComponent},  
+  {path:"ver-modalidad/:id", component:VerModalidadComponent}, 
+
   {path:"procesos", component:ProcesosComponent},
   {path:"crear-proceso", component:CrearProcesoComponent},
   {path:"editar-proceso/:id", component:EditarProcesoComponent},  
-  {path:"ver-proceso/:id", component:VerProcesoComponent},  
+  {path:"ver-proceso/:id", component:VerProcesoComponent},
+  
+  {path:"companias", component:CrearCompaniaComponent},
+  {path:"crear-compania", component:CrearCompaniaComponent},
+  {path:"editar-compania/:id", component:EditarCompaniaComponent},
+  {path:"ver-compania/:id", component:VerCompaniaComponent},
+
+  {path:"formadepagos", component:CrearFormadepagoComponent},
+  {path:"crear-formadepago", component:CrearFormadepagoComponent},
+  {path:"editar-formadepago/:id", component:EditarFormadepagoComponent},
+  {path:"ver-formadepago/:id", component:VerFormadepagoComponent},
+
+  {path:"parametros", component:CrearParametroComponent},
+  {path:"crear-parametro", component:CrearParametroComponent},
+  {path:"editar-parametro/:id", component:EditarParametroComponent},
+  {path:"ver-parametro/:id", component:VerParametroComponent},
+
+  {path:"tipocontratos", component:CrearTipocontratoComponent},
+  {path:"crear-tipocontrato", component:CrearTipocontratoComponent},
+  {path:"editar-tipocontrato/:id", component:EditarTipocontratoComponent},
+  {path:"ver-tipocontrato/:id", component:VerTipocontratoComponent},
+
+  {path:"usuarios", component:CrearUsuarioComponent},
+  {path:"crear-usuario", component:CrearUsuarioComponent},
+  {path:"editar-usuario/:id", component:EditarUsuarioComponent},
+  {path:"ver-usuario/:id", component:VerUsuarioComponent},
+
+  {path:"garantias", component:CrearGarantiaComponent},
+  {path:"crear-garantia", component:CrearGarantiaComponent},
+  {path:"editar-garantia/:id", component:EditarGarantiaComponent},
+  {path:"ver-garantia/:id", component:VerGarantiaComponent},  
+
   {path:"*", redirectTo:'/', pathMatch:'full'}
 ];
 
