@@ -18,6 +18,9 @@ import { RouterModule, Routes} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProcesosComponent } from './procesos/procesos.component';
+import { CrearProcesoComponent } from './crear-proceso/crear-proceso.component';
+import { EditarProcesoComponent } from './editar-proceso/editar-proceso.component';
 
 
 const rutas:Routes=[
@@ -43,7 +46,10 @@ const rutas:Routes=[
     IniciarSesionComponent,
     ModalidadesComponent,
     CrearModalidadComponent,
-    EditarModalidadComponent
+    EditarModalidadComponent,
+    ProcesosComponent,
+    CrearProcesoComponent,
+    EditarProcesoComponent
   ],
   imports: [
     BrowserModule,
