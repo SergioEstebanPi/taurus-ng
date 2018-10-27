@@ -13,8 +13,9 @@
         	<td>{{ modalidad.nombre }}</td>
 			<td>{{ modalidad.descripcion }}</td>
 			<td>
-				<a [routerLink]="['/editar-modalidad', modalidad.id]" class="btn btn-light">Editar</a>
-				<a (click)="eliminarModalidad(modalidad.id)" class="btn btn-light">Eliminar</a>
+				<!-- <a [routerLink]="['/editar-modalidad', modalidad.id]" class="btn btn-light">Editar</a> -->
+				<a [routerLink]="['/ver-modalidad', modalidad.id]" class="btn btn-light">Ver</a>
+				<!-- <a (click)="eliminarModalidad(modalidad.id)" class="btn btn-light">Eliminar</a> -->
 			</td>
 			
 		</tr>

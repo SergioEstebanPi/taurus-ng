@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { ProcesosComponent } from './procesos/procesos.component';
 import { CrearProcesoComponent } from './crear-proceso/crear-proceso.component';
 import { EditarProcesoComponent } from './editar-proceso/editar-proceso.component';
+import { VerModalidadComponent } from './ver-modalidad/ver-modalidad.component';
+import { VerProcesoComponent } from './ver-proceso/ver-proceso.component';
 
 
 const rutas:Routes=[
@@ -31,10 +33,12 @@ const rutas:Routes=[
   {path:"iniciar-sesion", component:IniciarSesionComponent},
   {path:"modalidades", component:ModalidadesComponent},
   {path:"crear-modalidad", component:CrearModalidadComponent},
-  {path:"editar-modalidad/:id", component:EditarModalidadComponent},  
+  {path:"editar-modalidad/:id", component:EditarModalidadComponent},
+  {path:"ver-modalidad/:id", component:VerModalidadComponent},  
   {path:"procesos", component:ProcesosComponent},
   {path:"crear-proceso", component:CrearProcesoComponent},
   {path:"editar-proceso/:id", component:EditarProcesoComponent},  
+  {path:"ver-proceso/:id", component:VerProcesoComponent},  
   {path:"*", redirectTo:'/', pathMatch:'full'}
 ];
 
@@ -52,7 +56,9 @@ const rutas:Routes=[
     EditarModalidadComponent,
     ProcesosComponent,
     CrearProcesoComponent,
-    EditarProcesoComponent
+    EditarProcesoComponent,
+    VerModalidadComponent,
+    VerProcesoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<h2>Listado de procesos</h2>
+<h2>Modalidad <strong>{{modalidad.nombre}}</strong></h2>
 <a [routerLink]="['/crear-proceso']" class="btn btn-light">Crear</a>
 <table class="table table-hover table-bordered">
 	<thead>
@@ -22,8 +22,8 @@
 	        <td>{{ proceso.presupuestooficial }}</td>
 	        <td>{{ proceso.plazoejecucion }}</td>
 	        <td>{{ proceso.fechainicio }}</td>
-	        <td>{{ proceso.formadepago }}</td>
-	        <td>{{ proceso.garantia }}</td>
+	        <td>{{ proceso.formadepago.nombre }}</td>
+	        <td>{{ proceso.garantia.nombre }}</td>
 			<td>
 				<a [routerLink]="['/editar-proceso', proceso.id]" class="btn btn-light">Editar</a>
 				<a (click)="eliminarProceso(proceso.id)" class="btn btn-light">Eliminar</a>
