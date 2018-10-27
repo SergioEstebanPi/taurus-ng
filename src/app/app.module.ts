@@ -32,6 +32,9 @@ const rutas:Routes=[
   {path:"modalidades", component:ModalidadesComponent},
   {path:"crear-modalidad", component:CrearModalidadComponent},
   {path:"editar-modalidad/:id", component:EditarModalidadComponent},  
+  {path:"procesos", component:ProcesosComponent},
+  {path:"crear-proceso", component:CrearProcesoComponent},
+  {path:"editar-proceso/:id", component:EditarProcesoComponent},  
   {path:"*", redirectTo:'/', pathMatch:'full'}
 ];
 
