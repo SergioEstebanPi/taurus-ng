@@ -23,6 +23,30 @@ import { CrearProcesoComponent } from './crear-proceso/crear-proceso.component';
 import { EditarProcesoComponent } from './editar-proceso/editar-proceso.component';
 import { VerModalidadComponent } from './ver-modalidad/ver-modalidad.component';
 import { VerProcesoComponent } from './ver-proceso/ver-proceso.component';
+import { CompaniasComponent } from './companias/companias.component';
+import { CrearCompaniaComponent } from './crear-compania/crear-compania.component';
+import { EditarCompaniaComponent } from './editar-compania/editar-compania.component';
+import { VerCompaniaComponent } from './ver-compania/ver-compania.component';
+import { FormadepagosComponent } from './formadepagos/formadepagos.component';
+import { CrearFormadepagoComponent } from './crear-formadepago/crear-formadepago.component';
+import { EditarFormadepagoComponent } from './editar-formadepago/editar-formadepago.component';
+import { VerFormadepagoComponent } from './ver-formadepago/ver-formadepago.component';
+import { ParametrosComponent } from './parametros/parametros.component';
+import { CrearParametroComponent } from './crear-parametro/crear-parametro.component';
+import { EditarParametroComponent } from './editar-parametro/editar-parametro.component';
+import { VerParametroComponent } from './ver-parametro/ver-parametro.component';
+import { TipocontratosComponent } from './tipocontratos/tipocontratos.component';
+import { CrearTipocontratoComponent } from './crear-tipocontrato/crear-tipocontrato.component';
+import { EditarTipocontratoComponent } from './editar-tipocontrato/editar-tipocontrato.component';
+import { VerTipocontratoComponent } from './ver-tipocontrato/ver-tipocontrato.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { VerUsuarioComponent } from './ver-usuario/ver-usuario.component';
+import { GarantiasComponent } from './garantias/garantias.component';
+import { CrearGarantiaComponent } from './crear-garantia/crear-garantia.component';
+import { EditarGarantiaComponent } from './editar-garantia/editar-garantia.component';
+import { VerGarantiaComponent } from './ver-garantia/ver-garantia.component';
 
 
 const rutas:Routes=[
@@ -58,7 +82,31 @@ const rutas:Routes=[
     CrearProcesoComponent,
     EditarProcesoComponent,
     VerModalidadComponent,
-    VerProcesoComponent
+    VerProcesoComponent,
+    CompaniasComponent,
+    CrearCompaniaComponent,
+    EditarCompaniaComponent,
+    VerCompaniaComponent,
+    FormadepagosComponent,
+    CrearFormadepagoComponent,
+    EditarFormadepagoComponent,
+    VerFormadepagoComponent,
+    ParametrosComponent,
+    CrearParametroComponent,
+    EditarParametroComponent,
+    VerParametroComponent,
+    TipocontratosComponent,
+    CrearTipocontratoComponent,
+    EditarTipocontratoComponent,
+    VerTipocontratoComponent,
+    UsuariosComponent,
+    CrearUsuarioComponent,
+    EditarUsuarioComponent,
+    VerUsuarioComponent,
+    GarantiasComponent,
+    CrearGarantiaComponent,
+    EditarGarantiaComponent,
+    VerGarantiaComponent
   ],
   imports: [
     BrowserModule,
