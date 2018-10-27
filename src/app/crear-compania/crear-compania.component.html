@@ -1,3 +1,24 @@
-<p>
-  crear-compania works!
-</p>
+<h1>Crear Compania</h1>
+<form>
+	<div class="form-group">
+		<label for="id">id</label>
+		<input [(ngModel)]="compania.id" type="text" name="id" class="form-control">
+	</div>
+    <div class="form-group">
+		<label for="nombre">nombre</label>
+		<input [(ngModel)]="compania.nombre" type="text" name="nombre" class="form-control">
+	</div>
+    <div class="form-group">
+		<label for="nit">ciudad</label>
+		<input [(ngModel)]="compania.nit" type="text" name="nit" class="form-control">
+	</div>
+    <div class="form-group">
+		<label for="ciudad">ciudad</label>
+		<input [(ngModel)]="compania.ciudad" type="text" name="ciudad" class="form-control">
+	</div>
+    <div class="form-group">
+		<label for="departamento">departamento</label>
+		<textarea [(ngModel)]="compania.departamento" type="text" name="departamento" class="form-control"></textarea>
+  	</div>
+	<button class="btn btn-success" (click)="crearCompania()">Crear Compañia</button>
+</form>
