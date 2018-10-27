@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {  ProcesosService } from '../services/procesos.service';
+import {  CompaniasService } from '../services/companias.service';
 import { Router } from '@angular/router';
 import { Globals } from '../globals';
 
@@ -12,9 +13,11 @@ import { Globals } from '../globals';
 export class CrearProcesoComponent implements OnInit {
 
 	proceso:any;
+  compania:any;
   error:boolean;
 
-  constructor(private _procesoes:ProcesosService,
+  constructor(private _procesos:ProcesosService,
+    private _companias:CompaniasService,
   			private _router:Router,
             private _globals:Globals) {
   	this.proceso =     {
@@ -31,10 +34,33 @@ export class CrearProcesoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.traerCompanias();
+  }
+
+  traerCompanias(){
+    this._companias.traercompanias()
+      .subscribe(
+        respuesta => {
+          if (this.frase && this.frase.trim() != '') {
+            this.companias = this.companias.filter(
+              (item) => {
+                return (item.nombre.toLowerCase().indexOf(this.frase.toLowerCase()) > -1);
+              }
+            );
+          } else {
+            this.companias = respuesta;
+          }
+          this._router.navigate(['/modalidades']);
+          //this.modalidades = respuesta;
+        },
+        error => {
+          console.log(error);
+        }
+      );    
   }
 
   crearproceso(){
-		this._procesoes.crearproceso(this.proceso)
+		this._procesos.crearproceso(this.proceso)
 			.subscribe(
 				respuesta => {
           this.error = false;

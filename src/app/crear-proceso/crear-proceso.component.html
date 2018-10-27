@@ -1,6 +1,9 @@
 <div class="container">
 	<h1>Crear proceso</h1>
 	<form>
+		<select [(ngModel)]='compania.id' class='form-control'>
+		  <option value='{{compania.id}}'>{{compania.nombre}}</option>
+		</select>	
 		<div class="form-group">
 			<label for="compania">compania</label>
 			<input [(ngModel)]="proceso.compania" type="text" name="compania" class="form-control">
