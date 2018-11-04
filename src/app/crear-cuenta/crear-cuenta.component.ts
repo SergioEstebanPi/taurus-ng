@@ -66,8 +66,8 @@ export class CrearCuentaComponent implements OnInit {
   		.subscribe(
   			respuesta => {
   				let autenticacion = {
-              username: this.formulario.nombre,
-  						password: this.formulario.correo,
+              username: this.formulario.correo,
+  						password: this.formulario.contrasena,
   				};
           //this.iniciarSesion(autenticacion);
           //this.activeModal.close(autenticacion);
@@ -85,11 +85,12 @@ export class CrearCuentaComponent implements OnInit {
       .obtenerToken(autenticacion)
       .subscribe(
         respuesta => {
-          console.log('respuesta: ' + respuesta);
-          localStorage.setItem("SessionToken", respuesta.jwt);
+          //console.log('respuesta: ' + respuesta);
+          //localStorage.setItem("SessionToken", respuesta.jwt);
+          localStorage.setItem("SessionToken", respuesta.headers.get("Authorization"));
           this.error = false;
           this.activeModal.close();
-          this.modalRef = this._modal.open(NgbdModalContent);
+          //this.modalRef = this._modal.open(NgbdModalContent);
           //this.buscarUsuario();
         },
         error => {

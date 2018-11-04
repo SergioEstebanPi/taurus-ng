@@ -20,10 +20,11 @@ export class UsuariosService {
   	this.encabezados = {
   		headers: new HttpHeaders(
 		  	{
-		  		"Content-Type": "application/json"//,
+		  		"Content-Type": "application/json"
 		  		//"Authorization": "Bearer " + localStorage.getItem("SessionToken")
 		  	}
-	  	)
+	  	),
+      observe: "response"
   	};
   }
 
@@ -34,7 +35,7 @@ export class UsuariosService {
 			urlAutenticacion,
 			parametros,
 			this.encabezados
-		);
+		);   
 	}
 
 
@@ -49,12 +50,12 @@ export class UsuariosService {
 	}
 
 	usuarioActual(): Observable<any> {
-		let urlUsuario = this.url + "users/current";
+		let urlUsuario = this._globals.url + "/usuario";
 		let encabezadosToken = {
 			headers: new HttpHeaders(
 				{
 					"Content-Type": "application/json",
-					"Authorization": "Bearer " + localStorage.getItem("SessionToken")
+					"Authorization": localStorage.getItem("SessionToken")
 				}
 			)
 		};
@@ -64,9 +65,10 @@ export class UsuariosService {
 		);
 	}
 
+
 	cerraSesion(): Observable<any> {
-		let urlCerrarSesion = this.url + "logout";
-		return this.http.post<any>(
+		let urlCerrarSesion = this._globals.url + "/cerrar-sesion";
+		return this.http.get<any>(
 			urlCerrarSesion,
 			this.encabezados
 		);

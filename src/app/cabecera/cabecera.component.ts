@@ -37,16 +37,16 @@ export class CabeceraComponent implements OnInit {
       this.url = this._globlas.url;
       this.usuario = {
         nombre: "",
-        email: ""
+        correo: ""
       };
       this.logeado = false;
       this.error = false;
   }
 
   ngOnInit() {
-    if(localStorage.getItem("SessionToken") != null){
-      this.buscarUsuario();
-    }
+    //if(localStorage.getItem("SessionToken") != null){
+      //this.buscarUsuario();
+    //}
     // else {
       //this._router.navigateByUrl('/');
     //}
@@ -68,7 +68,10 @@ export class CabeceraComponent implements OnInit {
           (result) => {
            //console.log(result);
            this.iniciarSesion = true;
-           this.buscarUsuario();
+           //this._router.navigateByUrl('/');
+           this.logeado = true;
+           this.onLogeado.emit(true);
+           //this.buscarUsuario();
            //this.iniciarSesion(result);
          }
        ).catch(
@@ -87,7 +90,10 @@ export class CabeceraComponent implements OnInit {
            //console.log(result);
            //this.iniciarSesion(result);
            this.crearCuenta = true;
-           this.buscarUsuario();
+           //this._router.navigateByUrl('/');
+           this.logeado = true;
+           this.onLogeado.emit(true);
+           //this.buscarUsuario();
          }
        ).catch(
          (error) => {
@@ -96,7 +102,7 @@ export class CabeceraComponent implements OnInit {
          }
       );
   }
-
+/*
   buscarUsuario(){
     this._usuarios.usuarioActual()
       .subscribe(
@@ -116,19 +122,23 @@ export class CabeceraComponent implements OnInit {
         }
       );
   }
+  */
 
   cerrarSesion() {
     localStorage.removeItem('SessionToken');
-    this.usuario = null;
-    this.logeado = false;
     this._usuarios.cerraSesion()
       .subscribe(
         respuesta => {
-          window.location.reload();
+          //window.location.reload();
+          this.logeado = false;
+          this.usuario = {
+            nombre: "",
+            correo: ""
+          };
           this._router.navigateByUrl('/');
         },
         error => {
-          window.location.reload();
+          //window.location.reload();
           console.log(error);
           this._router.navigateByUrl('/');
         }

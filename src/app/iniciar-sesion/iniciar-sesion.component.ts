@@ -42,10 +42,14 @@ export class IniciarSesionComponent implements OnInit {
       .obtenerToken(this.usuario)
       .subscribe(
         respuesta => {
-     	console.log(respuesta);
-          localStorage.setItem("SessionToken", respuesta);
+     	      //console.log('respuesta: ' + respuesta);
+           //alert('token ' + respuesta.headers.keys());
+           //alert(respuesta.body);
+          localStorage.setItem("SessionToken", respuesta.headers.get("Authorization"));
+          //localStorage.setItem("UserName", respuesta.body);
           this.error = false;
           this.activeModal.close(this.usuario);
+          this._router.navigate(['/']);
         },
         error => {
           this.error = true;
