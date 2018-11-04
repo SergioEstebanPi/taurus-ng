@@ -50,7 +50,7 @@ export class UsuariosService {
 	}
 
 	usuarioActual(): Observable<any> {
-		let urlUsuario = this._globals.url + "/usuario";
+		let urlUsuario = this._globals.url + "/username";
 		let encabezadosToken = {
 			headers: new HttpHeaders(
 				{

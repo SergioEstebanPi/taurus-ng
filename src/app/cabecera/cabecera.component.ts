@@ -71,7 +71,8 @@ export class CabeceraComponent implements OnInit {
            //this._router.navigateByUrl('/');
            this.logeado = true;
            this.onLogeado.emit(true);
-           //this.buscarUsuario();
+           //this.usuario = respuesta;
+           this.buscarUsuario();
            //this.iniciarSesion(result);
          }
        ).catch(
@@ -93,7 +94,8 @@ export class CabeceraComponent implements OnInit {
            //this._router.navigateByUrl('/');
            this.logeado = true;
            this.onLogeado.emit(true);
-           //this.buscarUsuario();
+           //this.usuario = respuesta;
+           this.buscarUsuario();
          }
        ).catch(
          (error) => {
@@ -102,7 +104,7 @@ export class CabeceraComponent implements OnInit {
          }
       );
   }
-/*
+
   buscarUsuario(){
     this._usuarios.usuarioActual()
       .subscribe(
@@ -122,7 +124,7 @@ export class CabeceraComponent implements OnInit {
         }
       );
   }
-  */
+
 
   cerrarSesion() {
     localStorage.removeItem('SessionToken');
