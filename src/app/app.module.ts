@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { Globals } from './globals';
@@ -55,6 +56,8 @@ import { CrearGarantiaComponent } from './crear-garantia/crear-garantia.componen
 import { EditarGarantiaComponent } from './editar-garantia/editar-garantia.component';
 import { VerGarantiaComponent } from './ver-garantia/ver-garantia.component';
 
+import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
+
 
 const rutas:Routes=[
   {path:"", component:InicioComponent},
@@ -62,6 +65,7 @@ const rutas:Routes=[
   {path:"contacto", component:ContactoComponent},
   {path:"acercade", component:AcercadeComponent},
   {path:"iniciar-sesion", component:IniciarSesionComponent},
+  {path:"crear-cuenta", component:CrearCuentaComponent},
 
   {path:"modalidades", component:ModalidadesComponent},
   {path:"crear-modalidad", component:CrearModalidadComponent},
@@ -146,7 +150,8 @@ const rutas:Routes=[
     GarantiasComponent,
     CrearGarantiaComponent,
     EditarGarantiaComponent,
-    VerGarantiaComponent
+    VerGarantiaComponent,
+    CrearCuentaComponent
   ],
   imports: [
     BrowserModule,
@@ -154,7 +159,7 @@ const rutas:Routes=[
     HttpModule,
     HttpClientModule,
     FormsModule,
-    //NgbModule.forRoot()
+    NgbModule.forRoot()
   ],
   providers: [
   	Globals

@@ -38,6 +38,7 @@ export class CrearProcesoComponent implements OnInit {
   }
 
   traerCompanias(){
+    /*
     this._companias.traercompanias()
       .subscribe(
         respuesta => {
@@ -56,7 +57,8 @@ export class CrearProcesoComponent implements OnInit {
         error => {
           console.log(error);
         }
-      );    
+      ); 
+      */   
   }
 
   crearproceso(){
