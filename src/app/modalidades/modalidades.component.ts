@@ -32,7 +32,7 @@ export class ModalidadesComponent implements OnInit {
 
 
   traermodalidades(){
-  	this._modalidades.traerModalidades()
+  	this._modalidades.traermodalidades()
   		.subscribe(
   			respuesta => {
           if (this.frase && this.frase.trim() != '') {
@@ -54,7 +54,7 @@ export class ModalidadesComponent implements OnInit {
   }
 
   mostrarModalidad(id){
-  	this._modalidades.mostrarModalidad(id)
+  	this._modalidades.mostrarmodalidad(id)
   		.subscribe(
   			respuesta => {
   				console.log(respuesta);
@@ -69,7 +69,7 @@ export class ModalidadesComponent implements OnInit {
   eliminarModalidad(id){
   	let confirmacion = confirm("Estas seguro?");
   	if(confirmacion){
-	  	this._modalidades.eliminarModalidad(id)
+	  	this._modalidades.eliminarmodalidad(id)
 	  		.subscribe(
 	  			respuesta => {
 	  				//console.log(respuesta);

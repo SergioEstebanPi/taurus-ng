@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 
 import { Globals } from '../globals';
 
+//import { BehaviorSubject  } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,9 @@ export class ModalidadesService {
   url:string;
   encabezados:any;
   Modalidades:Array<any>;
+  modalidadActual:any;
+
+  //private modalidadactual = new BehaviorSubject<Modalidad>();
 
   constructor(private http:HttpClient,
     private _globals:Globals) {
@@ -20,15 +25,15 @@ export class ModalidadesService {
   	this.encabezados = {
   		headers: new HttpHeaders(
 		  	{
-		  		"Content-Type": "application/json"//,
-		  		//"Authorization": "Bearer " + localStorage.getItem("SessionToken")
+		  		"Content-Type": "application/json",
+		  		"Authorization": localStorage.getItem("SessionToken")
 		  	}
 	  	)
   	};
   }
 
   /* GET index */
-  traerModalidades():Observable<any>{
+  traermodalidades():Observable<any>{
   	return this.http.get<any>(
   			this.url,
   			this.encabezados
@@ -36,7 +41,7 @@ export class ModalidadesService {
   }
 
   /* GET show */
-  mostrarModalidad(id):Observable<any>{
+  mostrarmodalidad(id):Observable<any>{
   	let urlmodalidad = this.url + "/" + id;
   	return this.http.get<any>(
   		urlmodalidad,
@@ -45,7 +50,7 @@ export class ModalidadesService {
   }
 
   /* POST create */
-  crearModalidad(modalidad){
+  crearmodalidad(modalidad){
   	return this.http.post<any>(
   		this.url,
   		modalidad,
@@ -54,7 +59,7 @@ export class ModalidadesService {
   }
 
   /* PUT update */
-  modificarModalidad(modalidad){
+  modificarmodalidad(modalidad){
 	let urlmodalidad = this.url;
   	return this.http.put<any>(
   		urlmodalidad,
@@ -64,7 +69,7 @@ export class ModalidadesService {
   }
 
   /* DELETE destroy */
-  eliminarModalidad(id){
+  eliminarmodalidad(id){
   	let urlmodalidad = this.url + "/" + id;
   	return this.http.delete<any>(
   		urlmodalidad,

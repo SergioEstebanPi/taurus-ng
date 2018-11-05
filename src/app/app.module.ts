@@ -68,12 +68,13 @@ const rutas:Routes=[
   {path:"crear-cuenta", component:CrearCuentaComponent},
 
   {path:"modalidades", component:ModalidadesComponent},
+  {path:"modalidades#:id", component:ModalidadesComponent},
   {path:"crear-modalidad", component:CrearModalidadComponent},
   {path:"editar-modalidad/:id", component:EditarModalidadComponent},
   {path:"ver-modalidad/:id", component:VerModalidadComponent}, 
 
   {path:"procesos", component:ProcesosComponent},
-  {path:"crear-proceso", component:CrearProcesoComponent},
+  {path:"crear-proceso/:modalidad_id", component:CrearProcesoComponent},
   {path:"editar-proceso/:id", component:EditarProcesoComponent},  
   {path:"ver-proceso/:id", component:VerProcesoComponent},
   

@@ -32,7 +32,7 @@ export class EditarModalidadComponent implements OnInit {
   ngOnInit() {
   	this._activeroute.params.subscribe(
   		respuesta => {
-  			this._modalidades.mostrarModalidad(respuesta['id'])
+  			this._modalidades.mostrarmodalidad(respuesta['id'])
 	  			.subscribe(
 	  				respuesta => {
 	  					//console.log(respuesta);
@@ -52,7 +52,7 @@ export class EditarModalidadComponent implements OnInit {
 
 
   editarModalidad(){
-  	this._modalidades.modificarModalidad(this.modalidad)
+  	this._modalidades.modificarmodalidad(this.modalidad)
   		.subscribe(
   			respuesta => {
           this.error = false;

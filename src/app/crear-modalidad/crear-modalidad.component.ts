@@ -27,14 +27,14 @@ export class CrearModalidadComponent implements OnInit {
   }
 
   crearModalidad(){
-		this._modalidades.crearModalidad(this.modalidad)
+		this._modalidades.crearmodalidad(this.modalidad)
 			.subscribe(
 				respuesta => {
           this.error = false;
           alert('Modalidad creada correctamente');
           this.modalidad = respuesta;
-          console.log(this.modalidad);
-					//this._router.navigate(["/traer-modalidad");
+          //console.log(this.modalidad);
+					this._router.navigate(["/ver-modalidad", this.modalidad.id]);
 					//console.log(respuesta);
 				},
 				error => {

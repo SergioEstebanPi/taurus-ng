@@ -44,20 +44,11 @@ export class CabeceraComponent implements OnInit {
   }
 
   ngOnInit() {
-    //if(localStorage.getItem("SessionToken") != null){
-      //this.buscarUsuario();
-    //}
-    // else {
-      //this._router.navigateByUrl('/');
-    //}
-  }
-
-  ngAfterViewInit(){
-    /*
-    setTimeout(() => {
-      this.open();
-    });
-    */
+    if(localStorage.getItem("SessionToken") != null){
+      this.buscarUsuario();
+    } else {
+      this._router.navigateByUrl('/');
+    }
   }
 
   openIniciarSesion() {
@@ -69,8 +60,8 @@ export class CabeceraComponent implements OnInit {
            //console.log(result);
            this.iniciarSesion = true;
            //this._router.navigateByUrl('/');
-           this.logeado = true;
-           this.onLogeado.emit(true);
+           //this.logeado = true;
+           //this.onLogeado.emit(true);
            //this.usuario = respuesta;
            this.buscarUsuario();
            //this.iniciarSesion(result);
@@ -92,8 +83,8 @@ export class CabeceraComponent implements OnInit {
            //this.iniciarSesion(result);
            this.crearCuenta = true;
            //this._router.navigateByUrl('/');
-           this.logeado = true;
-           this.onLogeado.emit(true);
+           //this.logeado = true;
+           //this.onLogeado.emit(true);
            //this.usuario = respuesta;
            this.buscarUsuario();
          }
@@ -128,6 +119,7 @@ export class CabeceraComponent implements OnInit {
 
   cerrarSesion() {
     localStorage.removeItem('SessionToken');
+    localStorage.removeItem('compania');
     this._usuarios.cerraSesion()
       .subscribe(
         respuesta => {

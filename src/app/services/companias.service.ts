@@ -20,15 +20,15 @@ export class CompaniasService {
   	this.encabezados = {
   		headers: new HttpHeaders(
 		  	{
-		  		"Content-Type": "application/json"//,
-		  		//"Authorization": "Bearer " + localStorage.getItem("SessionToken")
+		  		"Content-Type": "application/json",
+		  		"Authorization": localStorage.getItem("SessionToken")
 		  	}
 	  	)
   	};
   }
 
   /* GET index */
-  traerCompanias():Observable<any>{
+  traercompanias():Observable<any>{
   	return this.http.get<any>(
   			this.url,
   			this.encabezados
@@ -36,7 +36,7 @@ export class CompaniasService {
   }
 
   /* GET show */
-  mostrarCompania(id):Observable<any>{
+  mostrarcompania(id):Observable<any>{
   	let urlcompania = this.url + "/" + id;
   	return this.http.get<any>(
   		urlcompania,

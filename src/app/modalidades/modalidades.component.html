@@ -8,7 +8,7 @@
 		<th>Acción</th>
 	</thead>
 	<tbody>
-		<tr id="modalidad.id" *ngFor="let modalidad of modalidades">
+		<tr id="{{modalidad.id}}" *ngFor="let modalidad of modalidades">
 			<td>{{ modalidad.id }}</td>
         	<td>{{ modalidad.nombre }}</td>
 			<td>{{ modalidad.descripcion }}</td>

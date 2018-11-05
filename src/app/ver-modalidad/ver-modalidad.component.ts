@@ -29,20 +29,25 @@ export class VerModalidadComponent implements OnInit {
   		nombre: "",
   		descripcion: ""
   	};
-  	this.procesos = [];
+  	this.procesos = [
+    ];
   }
 
   ngOnInit() {
   	this._activeroute.params.subscribe(
   		respuesta => {
-  			this._modalidades.mostrarModalidad(respuesta['id'])
+        //alert(respuesta);
+  			this._modalidades.mostrarmodalidad(respuesta['id'])
 	  			.subscribe(
 	  				respuesta => {
 	  					//console.log(respuesta);
 	  					this.modalidad = respuesta;
+              //this._modalidades.modalidadActual = this.modalidad;
+              //alert(this.modalidad);
+              //console.log(this.modalidad);
 	  					this.procesos = respuesta.procesos;
-	  					console.log(this.modalidad);
-	  					console.log(this.procesos);
+	  					//console.log(this.modalidad);
+	  					//console.log(this.procesos);
 	  				},
 	  				error => {
 	  					console.log(error);

@@ -9,6 +9,7 @@ import { UsuariosService } from '../services/usuarios.service';
 import { Router } from '@angular/router';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { CompaniasService } from '../services/companias.service';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -21,20 +22,37 @@ export class IniciarSesionComponent implements OnInit {
 	//username:string;
 	//password:string;
 	error:any;
+  companias:any;
+  compania:any;
 
   constructor(private _usuarios: UsuariosService,
 		private _router: Router,
-		public activeModal: NgbActiveModal) {
+		public activeModal: NgbActiveModal,
+    private _companias: CompaniasService) {
   		this.usuario = {
   			username: "",
   			password: ""
-  		}
+  		};
+      this.companias = [
+      ];
    }
 
   ngOnInit() {
-
+    this.traercompanias();
 
   }
+
+  traercompanias(){
+    this._companias.traercompanias()
+      .subscribe(
+        respuesta => {
+          this.companias = respuesta;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }  
 
   iniciarSesion() {
   	this.error = false;
@@ -46,6 +64,7 @@ export class IniciarSesionComponent implements OnInit {
            //alert('token ' + respuesta.headers.keys());
            //alert(respuesta.body);
           localStorage.setItem("SessionToken", respuesta.headers.get("Authorization"));
+          localStorage.setItem("compania", this.compania.id);
           //localStorage.setItem("UserName", respuesta.body);
           this.error = false;
           this.activeModal.close(this.usuario);
