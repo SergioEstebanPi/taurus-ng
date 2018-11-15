@@ -13,4 +13,8 @@ export class CrearCompaniaComponent implements OnInit {
   ngOnInit() {
   }
 
+  crearCompania(){
+  	
+  }
+
 }

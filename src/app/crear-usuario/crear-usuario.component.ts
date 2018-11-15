@@ -12,5 +12,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   ngOnInit() {
   }
-
+crearModalidad(){
+	
+}
 }

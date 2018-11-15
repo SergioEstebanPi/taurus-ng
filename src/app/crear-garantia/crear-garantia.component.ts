@@ -14,4 +14,8 @@ export class CrearGarantiaComponent implements OnInit {
   ngOnInit() {
   }
 
+  creargarantia(){
+  	
+  }
+
 }

@@ -14,4 +14,8 @@ export class CrearParametroComponent implements OnInit {
   ngOnInit() {
   }
 
+  crearparametro(){
+  	
+  }
+
 }

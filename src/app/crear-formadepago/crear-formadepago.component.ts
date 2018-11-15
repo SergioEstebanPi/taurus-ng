@@ -14,4 +14,8 @@ formadepago:any;
   ngOnInit() {
   }
 
+  crearformadepago(){
+  	
+  }
+
 }

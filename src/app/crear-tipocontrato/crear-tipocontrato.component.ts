@@ -13,4 +13,8 @@ export class CrearTipocontratoComponent implements OnInit {
   ngOnInit() {
   }
 
+  creartipocontrato(){
+  	
+  }
+
 }
