@@ -6,11 +6,11 @@ const app = express();
 
 // Serve only the static files form the dist directory
 //app.use(express.static(__dirname + '/dist/reciclahorro-ng'));
-app.use(express.static(path.join(__dirname,'/dist/reciclahorro-ng')));
+app.use(express.static(path.join(__dirname,'/dist/taurus-ng')));
  //app.use(express.static(path.join(__dirname, '/movies-client/dist')));
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(path.join(__dirname,'/dist/reciclahorro-ng/index.html')));
+res.sendFile(path.join(path.join(__dirname,'/dist/taurus-ng/index.html')));
 });
 //app.use(express.static(path.join(__dirname, '/movies-client/dist/movies-client')));
 // Start the app by listening on the default Heroku port
