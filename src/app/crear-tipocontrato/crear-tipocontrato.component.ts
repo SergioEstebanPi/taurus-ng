@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearTipocontratoComponent implements OnInit {
 
+	tipocontrato:any;
   constructor() { }
 
   ngOnInit() {

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearParametroComponent implements OnInit {
 
+	parametro:any;
+
   constructor() { }
 
   ngOnInit() {

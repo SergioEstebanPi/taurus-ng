@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearCompaniaComponent implements OnInit {
 
+	compania:any;
   constructor() { }
 
   ngOnInit() {

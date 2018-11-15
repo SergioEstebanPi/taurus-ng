@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearFormadepagoComponent implements OnInit {
 
+formadepago:any;
+
   constructor() { }
 
   ngOnInit() {

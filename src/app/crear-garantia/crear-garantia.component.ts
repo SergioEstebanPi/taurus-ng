@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearGarantiaComponent implements OnInit {
 
+	garantia:any;
+
   constructor() { }
 
   ngOnInit() {
