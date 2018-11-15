@@ -22,12 +22,14 @@ export class CrearProcesoComponent implements OnInit {
   error:boolean;
  
   compania:any;
-  companias:any;
+  //companias:any;
   formadepago:any;
   formadepagos:any;
   garantia:any;
   garantias:any;
+  modalidades:any;
   //modalidad:any;
+  modalidadseleccionada:boolean;
 
   constructor(private _procesos:ProcesosService,
     private _companias:CompaniasService,
@@ -38,6 +40,7 @@ export class CrearProcesoComponent implements OnInit {
     private _globals:Globals,
     private _activeroute:ActivatedRoute) {
   	this.proceso =     {
+      
   		  compania: {},
         modalidad: {},
         numero: "",
@@ -48,6 +51,7 @@ export class CrearProcesoComponent implements OnInit {
         fechainicio: "",
         formadepago: {},
         garantia: {}
+       
     };
   }
 
@@ -60,7 +64,7 @@ export class CrearProcesoComponent implements OnInit {
         console.log(error);
       }
     ); 
-
+/*
     let compania_id = localStorage.getItem("compania");
     this._companias.mostrarcompania(compania_id)
       .subscribe(
@@ -71,6 +75,7 @@ export class CrearProcesoComponent implements OnInit {
           console.log(error);
         }
       );
+      */
     
     //alert(this.modalidad);
     //console.log(this.modalidad);
@@ -80,17 +85,21 @@ export class CrearProcesoComponent implements OnInit {
   }
 
   mostrarmodalidad(id){
-    this._modalidades.mostrarmodalidad(id)
-      .subscribe(
-        respuesta => {
-          this.proceso.modalidad = respuesta;
-          //console.log(respuesta);
-          //this.traercompanias();
-        },
-        error => {
-          console.log();
-        }
-      );
+    if (id != null) {
+      this._modalidades.mostrarmodalidad(id)
+        .subscribe(
+          respuesta => {
+            this.proceso.modalidad = respuesta;
+            //console.log(respuesta);
+            //this.traercompanias();
+          },
+          error => {
+            console.log();
+          }
+        );
+    } else {
+      this.traerModalidades();
+    }
   }  
 
 /*
@@ -106,6 +115,20 @@ export class CrearProcesoComponent implements OnInit {
       ); 
   }
   */
+
+  traerModalidades(){
+    this._modalidades.traermodalidades()
+      .subscribe(
+        respuesta => {
+          this.modalidades = respuesta;
+          //alert(this.modalidades);
+          //console.log(this.modalidades);
+        },
+        error => {
+          console.log(error);
+        }
+      ); 
+  }
 
   traerFormadepagos(){
     this._formadepagos.traerformadepagos()
@@ -130,7 +153,19 @@ export class CrearProcesoComponent implements OnInit {
         }
       ); 
   }    
-
+/*
+  traerTipocontratos(){
+    this._garantias.traergarantias()
+      .subscribe(
+        respuesta => {
+          this.garantias = respuesta;
+        },
+        error => {
+          console.log(error);
+        }
+      ); 
+  }    
+*/
   cambiarcompania(compania){
     this.proceso.compania = compania;
   }
@@ -151,7 +186,8 @@ export class CrearProcesoComponent implements OnInit {
           alert('proceso creado correctamente');
           this.proceso = respuesta;
           console.log(this.proceso);
-					this._router.navigate(["/ver-modalidad", this.proceso.modalidad]);
+					//this._router.navigate(["/ver-modalidad", this.proceso.modalidad]);
+          this._router.navigate(["/ver-proceso", this.proceso.id]);
 					//console.log(respuesta);
 				},
 				error => {

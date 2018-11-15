@@ -13,6 +13,15 @@
       </div>   
   -->
 		<div class="form-group">
+			<label for="modalidad">Modalidad</label>
+			<select [(ngModel)]="proceso.modalidad" name="modalidad" placeholder="Modalidad" class="form-control">
+				<!-- <option disabled selected>Seleccione una...</option> -->
+				<option *ngFor="let modalidad of modalidades" [ngValue]="modalidad">
+					{{modalidad.nombre}}
+				</option>
+			</select>  
+		</div>  
+		<div class="form-group">
 			<label for="numero">numero</label>
 			<input [(ngModel)]="proceso.numero" type="text" name="numero" class="form-control">
 		</div>

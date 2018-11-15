@@ -47,7 +47,7 @@ export class VerModalidadComponent implements OnInit {
               //console.log(this.modalidad);
 	  					this.procesos = respuesta.procesos;
 	  					//console.log(this.modalidad);
-	  					//console.log(this.procesos);
+	  					console.log(this.procesos);
 	  				},
 	  				error => {
 	  					console.log(error);

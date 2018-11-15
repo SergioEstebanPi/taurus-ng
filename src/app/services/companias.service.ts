@@ -17,14 +17,24 @@ export class CompaniasService {
   constructor(private http:HttpClient,
     private _globals:Globals) {
     this.url = _globals.url + '/compania';
-  	this.encabezados = {
-  		headers: new HttpHeaders(
-		  	{
-		  		"Content-Type": "application/json",
-		  		"Authorization": localStorage.getItem("SessionToken")
-		  	}
-	  	)
-  	};
+    if(localStorage.getItem("SessionToken") != null) {
+      this.encabezados = {
+        headers: new HttpHeaders(
+          {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("SessionToken")
+          }
+        )
+      };
+    } else {
+      this.encabezados = {
+        headers: new HttpHeaders(
+          {
+            "Content-Type": "application/json"
+          }
+        )
+      };        
+    }
   }
 
   /* GET index */

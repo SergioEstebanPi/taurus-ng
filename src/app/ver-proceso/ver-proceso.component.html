@@ -1,3 +1,53 @@
-<p>
-  ver-proceso works!
-</p>
+<div class="container">
+	<h1>Ver proceso</h1>
+	<form>
+		<!--
+      <div class="form-group">
+        <label for="compania">Compañia</label>
+        <select [(ngModel)]="proceso.compania" name="compania" placeholder="Compañia" class="form-control">
+        	<option disabled selected>Seleccione una...</option>
+			<option *ngFor="let compania of companias" [ngValue]="compania">
+				{{compania.nombre}}
+			</option>
+        </select>  
+      </div>   
+  -->
+		<div class="form-group">
+			<label>Modalidad</label>
+			<input [(ngModel)]="proceso.modalidad.nombre" type="text" name="modalidad" class="form-control" disabled>
+		</div>		 
+		<div class="form-group">
+			<label for="numero">numero</label>
+			<input [(ngModel)]="proceso.numero" type="text" name="numero" class="form-control" disabled>
+		</div>
+		<div class="form-group">
+			<label for="palabraclave">palabraclave</label>
+			<textarea [(ngModel)]="proceso.palabraclave" type="text" name="palabraclave" class="form-control" disabled></textarea>
+	  	</div>
+		<div class="form-group">
+			<label for="objeto">objeto</label>
+			<textarea [(ngModel)]="proceso.objeto" type="text" name="objeto" class="form-control" disabled></textarea>
+	  	</div>  
+		<div class="form-group">
+			<label for="presupuestooficial">presupuestooficial</label>
+			<textarea [(ngModel)]="proceso.presupuestooficial" type="text" name="presupuestooficial" class="form-control" disabled></textarea>
+	  	</div> 
+		<div class="form-group">
+			<label for="plazoejecucion">plazoejecucion</label>
+			<textarea [(ngModel)]="proceso.plazoejecucion" type="text" name="plazoejecucion" class="form-control" disabled></textarea>
+	  	</div>  
+		<div class="form-group">
+			<label for="fechainicio">fechainicio</label>
+			<textarea [(ngModel)]="proceso.fechainicio" type="text" name="fechainicio" class="form-control" disabled></textarea>
+	  	</div>   
+		<div class="form-group">
+			<label>Forma de pago</label>
+			<input [(ngModel)]="proceso.formadepago.nombre" type="text" name="formadepago" class="form-control" disabled>
+		</div>		  	 
+		<div class="form-group">
+			<label>Garantía</label>
+			<input [(ngModel)]="proceso.garantia.nombre" type="text" name="garantia" class="form-control" disabled>
+		</div>		  	 		 	   		   	  	  		
+		<a href="http://localhost:8080/reporte/{{proceso.id}}" class="btn btn-primary">Descargar Reporte Estudios previos</a>	
+	</form>	
+</div>

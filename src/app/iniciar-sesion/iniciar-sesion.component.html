@@ -14,15 +14,17 @@
             <label for="correo">Correo electrónico:</label>
             <input type="email" name="correo" [(ngModel)]="usuario.username" class="form-control">
           </div>
+          <!--
           <div class="form-group">
             <label for="compania">Compañia</label>
             <select [(ngModel)]="compania" name="compania" placeholder="Compañia" class="form-control">
-              <!-- <option disabled selected>Seleccione una...</option> -->
+              <option disabled selected>Seleccione una...</option>
               <option *ngFor="let compania of companias" [ngValue]="compania">
               {{compania.nombre}}
               </option>
             </select>  
-          </div>           
+          </div>       
+          -->    
           <div class="form-group">
             <label for="password">Contraseña:</label>
             <input type="password" name="password" [(ngModel)]="usuario.password" class="form-control">

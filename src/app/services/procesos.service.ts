@@ -19,14 +19,25 @@ export class ProcesosService {
   constructor(private http:HttpClient,
     private _globals:Globals) {
     this.url = _globals.url + '/proceso';
-  	this.encabezados = {
-  		headers: new HttpHeaders(
-		  	{
-		  		"Content-Type": "application/json"//,
-		  		//"Authorization": "Bearer " + localStorage.getItem("SessionToken")
-		  	}
-	  	)
-  	};
+    if (localStorage.getItem("SessionToken") != null){
+      this.encabezados = {
+        headers: new HttpHeaders(
+          {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("SessionToken")
+          }
+        )
+      };
+    } else {
+      this.encabezados = {
+          headers: new HttpHeaders(
+            {
+              "Content-Type": "application/json"//,
+              //"Authorization": "Bearer " + localStorage.getItem("SessionToken")
+            }
+          )
+        };      
+    }
   }
 
   /* GET index */

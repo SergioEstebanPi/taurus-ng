@@ -119,7 +119,7 @@ export class CabeceraComponent implements OnInit {
 
   cerrarSesion() {
     localStorage.removeItem('SessionToken');
-    localStorage.removeItem('compania');
+    //localStorage.removeItem('compania');
     this._usuarios.cerraSesion()
       .subscribe(
         respuesta => {

@@ -22,8 +22,8 @@ export class IniciarSesionComponent implements OnInit {
 	//username:string;
 	//password:string;
 	error:any;
-  companias:any;
-  compania:any;
+  //companias:any;
+  //compania:any;
 
   constructor(private _usuarios: UsuariosService,
 		private _router: Router,
@@ -33,15 +33,16 @@ export class IniciarSesionComponent implements OnInit {
   			username: "",
   			password: ""
   		};
-      this.companias = [
-      ];
+
+      //this.companias = [
+      //];
    }
 
   ngOnInit() {
-    this.traercompanias();
+    //this.traercompanias();
 
   }
-
+/*
   traercompanias(){
     this._companias.traercompanias()
       .subscribe(
@@ -52,7 +53,9 @@ export class IniciarSesionComponent implements OnInit {
           console.log(error);
         }
       );
-  }  
+  } 
+
+  */ 
 
   iniciarSesion() {
   	this.error = false;
@@ -64,7 +67,7 @@ export class IniciarSesionComponent implements OnInit {
            //alert('token ' + respuesta.headers.keys());
            //alert(respuesta.body);
           localStorage.setItem("SessionToken", respuesta.headers.get("Authorization"));
-          localStorage.setItem("compania", this.compania.id);
+          //localStorage.setItem("compania", this.compania.id);
           //localStorage.setItem("UserName", respuesta.body);
           this.error = false;
           this.activeModal.close(this.usuario);
