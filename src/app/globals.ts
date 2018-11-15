@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Globals {
-  url:string = 'https://contratacion.herokuapp.com/';
+  url:string = 'https://contratacion.herokuapp.com';
   //url: string = 'http://localhost:8080';
   ADMINISTRADOR:string = '0';
   USUARIO:string = '1';
