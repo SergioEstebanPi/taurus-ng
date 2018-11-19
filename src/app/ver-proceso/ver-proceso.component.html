@@ -48,6 +48,6 @@
 			<label>Garantía</label>
 			<input [(ngModel)]="proceso.garantia.nombre" type="text" name="garantia" class="form-control" disabled>
 		</div>		  	 		 	   		   	  	  		
-		<a href="http://localhost:8080/reporte/{{proceso.id}}" class="btn btn-primary">Descargar Reporte Estudios previos</a>	
+		<a href="{{urlreportes}}/{{proceso.id}}" class="btn btn-primary">Descargar Reporte Estudios previos</a>	
 	</form>	
 </div>

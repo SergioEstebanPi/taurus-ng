@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {  ProcesosService } from '../services/procesos.service';
 
 import { ActivatedRoute } from '@angular/router';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-ver-proceso',
@@ -12,9 +13,11 @@ import { ActivatedRoute } from '@angular/router';
 export class VerProcesoComponent implements OnInit {
 
 	proceso:any;
+  urlreportes:string;
 
   constructor(private _procesos:ProcesosService,
-  	private _activeroute:ActivatedRoute
+  	private _activeroute:ActivatedRoute,
+    private _globals:Globals
   	) { 
   	this.proceso = {
   		modalidad: {
@@ -27,6 +30,8 @@ export class VerProcesoComponent implements OnInit {
         nombre: ""
       }
   	};
+    this.urlreportes = "https://contratacion.herokuapp.com/reporte";
+    //this.urlreportes = "http://localhost:8080/reporte";
   }
 
   ngOnInit() {
@@ -37,6 +42,7 @@ export class VerProcesoComponent implements OnInit {
 	  			.subscribe(
 	  				respuesta => {
 	  					this.proceso = respuesta;
+              //this.urlreportes + this._globals.urlreportes;
 	  				},
 	  				error => {
 	  					console.log(error);

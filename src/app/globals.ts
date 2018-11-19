@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 export class Globals {
   url:string = 'https://contratacion.herokuapp.com';
   //url: string = 'http://localhost:8080';
+  //urlreportes:string = 'https://contratacion.herokuapp.com/reporte';
+  //urlreportes:string = 'http://localhost:8080/reporte';  
   ADMINISTRADOR:string = '0';
   USUARIO:string = '1';
   ALMACEN:string = '2';
